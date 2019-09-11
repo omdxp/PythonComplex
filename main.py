@@ -14,10 +14,10 @@ def main():
     number = Complex(42) # --> Real = 42, Imaginary = 0
     print(number)
     # Instanciation 3
-    number = Complex(12, -3.2) # --> Real = 12, Imaginary = -1
+    number = Complex(12, -3.2) # --> Real = 12, Imaginary = -3.2
     print(number)
     # Instanciation 4
-    number = Complex(im=13.2, re=5)
+    number = Complex(im=13.2, re=5) # --> Real = 5, Imaginary = 13.2
     print(number)
     
     # Basic operations
@@ -33,10 +33,31 @@ def main():
     print('({}) / ({}) = {}'.format(num1, num2, num1 / num2))
     # Floor division
     print('({}) // ({}) = {}'.format(num1, num2, num1 // num2))
+    ## Affecting the result directly on the number
+    # Summation
+    print('({}) += ({})'.format(num1, 2), end=' --> ')
+    num1 += 2
+    print(num1)
+    # Substraction
+    print('({}) -= ({})'.format(num1, num2), end=' --> ')
+    num1 -= num2
+    print(num1)
+    # Multiplication
+    print('({}) *= ({})'.format(num1, 2), end=' --> ')
+    num1 *= 2
+    print(num1)
+    # Division
+    print('({}) /= ({})'.format(num1, num2), end=' --> ')
+    num1 /= num2
+    print(num1)
+    # Floor division
+    print('({}) //= ({})'.format(num1, 2), end=' --> ')
+    num1 /= 2
+    print(num1)
     # Congugated of a complex number
-    print('con({}) = {}'.format(num1, num1.con()))
+    print('con({}) = {}'.format(num2, num2.con()))
     # Module of a complex number
-    print('mod({}) = {}'.format(num1, num1.mod()))
+    print('mod({}) = {}'.format(num2, num2.mod()))
     
     # Basic comparisons
     num1 = Complex(im=3.1, re=-5)
