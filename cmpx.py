@@ -101,8 +101,8 @@ class Complex():
         try:
             if not isinstance(other, Complex):
                 other = Complex(other)
-            den = other * Complex(other.re, - other.im)
-            num = self * Complex(other.re, - other.im)
+            den = other * other.con()
+            num = self * other.con()
             self.re = num.re / den.re
             self.im = num.im / den.re
             return Complex(self.re, self.im)
@@ -113,8 +113,8 @@ class Complex():
         try:
             if not isinstance(other, Complex):
                 other = Complex(other)
-            den = other * Complex(other.re, - other.im)
-            num = self * Complex(other.re, - other.im)
+            den = other * other.con()
+            num = self * other.con()
             self.re = num.re // den.re
             self.im = num.im // den.re
             return Complex(self.re, self.im)
