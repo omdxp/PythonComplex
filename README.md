@@ -11,7 +11,7 @@ Complex class for different operations on complex numbers.
 Use the package manager [pip](https://pypi.org/project/cmpx/) to install cmpx.
 
 ```bash
-pip install foobar
+pip install cmpx
 ```
 
 ## Usage
