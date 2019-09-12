@@ -4,7 +4,7 @@ Created on Tue Sep 10 17:37:40 2019
 
 @author: Omar Belghaouti
 """
-from cmpx import Complex
+from cmpx.Complex import Complex
 
 def main():
     # Instanciation 1
