@@ -34,7 +34,7 @@ print(number)
 number = Complex(im=13.2, re=5) # --> Real = 5, Imaginary = 13.2
 print(number)
 # Instanciation 5
-number = Complex(re=3, im=-2.4, resotre=False) # resotre argument is by default True, whenever an error occurs on operation, the last result will be restored to the object, else if it is False then the object will be simply None.
+number = Complex(re=3, im=-2.4, restore=False) # resotre argument is by default True, whenever an error occurs on operation, the last result will be restored to the object, else if it is False then the object will be simply None.
 ```
 ### Basic operations
 ```python
