@@ -33,7 +33,7 @@ class Complex():
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
                 other = Complex(other)
-            return Complex(self.re + other.re, self.im + other.im)
+            return Complex(self.re + other.re, self.im + other.im, self.restore)
         except ValueError as err:
             self.print_err(err)
     # Operator overloading 2 : -
@@ -43,7 +43,7 @@ class Complex():
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
                 other = Complex(other)
-            return Complex(self.re - other.re, self.im - other.im)
+            return Complex(self.re - other.re, self.im - other.im, self.restore)
         except ValueError as err:
             self.print_err(err)
     # Operator overloading 3 : *
@@ -53,7 +53,7 @@ class Complex():
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
                 other = Complex(other)
-            return Complex(self.re * other.re - self.im * other.im, self.re * other.im + self.im * other.re)
+            return Complex(self.re * other.re - self.im * other.im, self.re * other.im + self.im * other.re, self.restore)
         except ValueError as err:
             self.print_err(err)
     # Operator overloading 4 : /
@@ -69,8 +69,8 @@ class Complex():
                 print(Fore.RED + 'Float division by zero')
                 print(Fore.GREEN + 'Restoring last number')
                 print(Style.RESET_ALL, end='')
-                return Complex(self.re, self.im)
-            return Complex(num.re / den.re, num.im / den.re)
+                return Complex(self.re, self.im, self.restore)
+            return Complex(num.re / den.re, num.im / den.re, self.restore)
         except (ZeroDivisionError, ValueError) as err:
             self.print_err(err)
     # Operator overloading 5 : //
@@ -86,8 +86,8 @@ class Complex():
                 print(Fore.RED + 'Float division by zero')
                 print(Fore.GREEN + 'Restoring last number')
                 print(Style.RESET_ALL, end='')
-                return Complex(self.re, self.im)
-            return Complex(num.re // den.re, num.im // den.re)
+                return Complex(self.re, self.im, self.restore)
+            return Complex(num.re // den.re, num.im // den.re, self.restore)
         except (ZeroDivisionError, ValueError) as err:
             self.print_err(err)
     def __gt__(self, other):
@@ -170,7 +170,7 @@ class Complex():
                 other = Complex(other)
             self.re -= other.re
             self.im -= other.im
-            return Complex(self.re, self.im)
+            return Complex(self.re, self.im, self.restore)
         except ValueError as err:
             self.print_err(err)
     # Operator overloading 14: *=
@@ -182,7 +182,7 @@ class Complex():
                 other = Complex(other)
             self.re = self.re * other.re - self.im * other.im
             self.im = self.re * other.im + self.im * other.re
-            return Complex(self.re, self.im)
+            return Complex(self.re, self.im, self.restore)
         except ValueError as err:
             self.print_err(err)
     # Operator overloading 15: /=
@@ -198,10 +198,10 @@ class Complex():
                 print(Fore.RED + 'Float division by zero')
                 print(Fore.GREEN + 'Restoring last number')
                 print(Style.RESET_ALL, end='')
-                return Complex(self.re, self.im)
+                return Complex(self.re, self.im, self.restore)
             self.re = num.re / den.re
             self.im = num.im / den.re
-            return Complex(self.re, self.im)
+            return Complex(self.re, self.im, self.restore)
         except (ZeroDivisionError, ValueError) as err:
             self.print_err(err)
     # Operator overloading 16: //=
@@ -217,10 +217,10 @@ class Complex():
                 print(Fore.RED + 'Float division by zero')
                 print(Fore.GREEN + 'Restoring last number')
                 print(Style.RESET_ALL, end='')
-                return Complex(self.re, self.im)
+                return Complex(self.re, self.im, self.restore)
             self.re = num.re // den.re
             self.im = num.im // den.re
-            return Complex(self.re, self.im)
+            return Complex(self.re, self.im, self.restore)
         except (ZeroDivisionError, ValueError) as err:
             self.print_err(err)
     ## Helper functions
@@ -229,7 +229,7 @@ class Complex():
         return sqrt(self.re**2 + self.im**2)
     # Conjugated of a complex number
     def con(self):
-        return Complex(self.re, - self.im)
+        return Complex(self.re, - self.im, self.restore)
     # function to print the error message
     def print_err(self, err):
         print(Fore.RED + '{}: {}'.format(err.__class__.__name__, err))
