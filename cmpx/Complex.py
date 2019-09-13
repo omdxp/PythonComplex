@@ -158,7 +158,7 @@ class Complex():
                 other = Complex(other)
             self.re += other.re
             self.im += other.im
-            return Complex(self.re, self.im)
+            return Complex(self.re, self.im, self.restore)
         except ValueError as err:
             self.print_err(err)
     # Operator overloading 13: -=
@@ -236,6 +236,12 @@ class Complex():
         print(Style.RESET_ALL, end='')
     # Representation function for representing a complex number
     def __repr__(self):
-        output = str(self.re) + ' + ' + str(self.im) + 'j' if(self.im != 0) else str(self.re)
-        output = str(self.re) + ' - ' + str(-self.im) + 'j' if (self.im < 0) else output
+        if(self.re != 0 and self.im > 0):
+            output = str(self.re) + ' + ' + str(self.im) + 'j'
+        if(self.re != 0 and self.im < 0):
+            output = str(self.re) + ' - ' + str(-self.im) + 'j'
+        if(self.re != 0 and self.im == 0):
+            output = str(self.re)
+        if(self.re == 0 and self.im != 0):
+            output = str(self.im) + 'j'
         return output
