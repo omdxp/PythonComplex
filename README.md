@@ -17,7 +17,7 @@ pip install cmpx
 ## Usage
 ### Importing Complex class
 ```python
-from cmpx.Complex import Complex
+import cmpx
 ```
 ### Different instanciations of Complex class
 ```python
