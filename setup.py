@@ -5,8 +5,8 @@ with open('README.md') as readme_file:
 
 setup_args = dict(
     name='cmpx',
-    version='0.6',
-    description='Complex class for different operations on complex numbers',
+    version='0.7',
+    description='A package for different operations on complex numbers',
     long_description_content_type='text/markdown',
     long_description=README,
     license='MIT',
@@ -19,11 +19,18 @@ setup_args = dict(
     url='https://github.com/Omar-Belghaouti/PythonComplex',
     download_url='https://pypi.org/project/cmpx/',
     classifiers=[
+        'Operating System :: OS Independent',
+        'License :: OSI Approved :: MIT License',
         'Intended Audience :: End Users/Desktop',
         'Intended Audience :: Developers',
-        'Programming Language :: Python',
-    ]
+        'Programming Language :: Python :: 3',
+    ],
+    python_requires='~=3.3'
 )
 
+install_requires = [
+    'colorama'
+]
+
 if __name__ == '__main__':
-    setup(**setup_args)
+    setup(**setup_args, install_requires=install_requires)
