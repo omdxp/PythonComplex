@@ -100,7 +100,7 @@ if(num1 != num2): print('({}) != ({})'.format(num1, num2))
 ```python
 from cmpx.equations import solve
 ```
-### Solving equations
+#### Solving equations
 ```
 solutions = solve(-1,2,3) # It will return a tuple of solutions
 ```
