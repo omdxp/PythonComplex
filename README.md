@@ -35,6 +35,8 @@ number = Complex(im=13.2, re=5) # --> Real = 5, Imaginary = 13.2
 print(number)
 # Instanciation 5
 number = Complex(re=3, im=-2.4, restore=False) # restore argument is by default True, whenever an error occurs on operation, the last result will be restored to the object, else if it is False then the object will be simply None.
+# Instanciation 6
+number = Complex.fromComplex(4 - 3j - 2) # Real = 2, Imaginary = -3
 ```
 ### Basic operations
 ```python
@@ -92,6 +94,15 @@ if(num1 <= num2): print('({}) <= ({})'.format(num1, num2))
 if(num1 == num2): print('({}) == ({})'.format(num1, num2))
 # Not equal
 if(num1 != num2): print('({}) != ({})'.format(num1, num2))
+```
+### Solving linear equation and second degree equation
+#### Importing solve function
+```python
+from cmpx.equations import solve
+```
+#### Solving equations
+```
+solutions = solve(-1,2,3) # It will return a tuple of solutions
 ```
 
 ## Contributing
