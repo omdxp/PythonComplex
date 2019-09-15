@@ -223,6 +223,9 @@ class Complex():
             return Complex(self.re, self.im, self.restore)
         except (ZeroDivisionError, ValueError) as err:
             self.print_err(err)
+    # Operator overloading 17: - (Unary operator)
+    def __neg__(self):
+        return Complex(-self.re, -self.im, self.restore)
     ## Helper functions
     # Module function to calculate the modulus of a complex number
     def mod(self):
@@ -237,11 +240,13 @@ class Complex():
     # Representation function for representing a complex number
     def __repr__(self):
         if(self.re != 0 and self.im > 0):
-            output = str(self.re) + ' + ' + str(self.im) + 'j'
+            output = str(self.re) + ' + ' + str(self.im) + 'j' if(self.im != 1) else str(self.re) + ' + ' + 'j'
         if(self.re != 0 and self.im < 0):
-            output = str(self.re) + ' - ' + str(-self.im) + 'j'
+            output = str(self.re) + ' - ' + str(-self.im) + 'j' if(self.im != -1) else str(self.re) + ' - ' + 'j'
         if(self.re != 0 and self.im == 0):
             output = str(self.re)
-        if(self.re == 0 and self.im != 0):
-            output = str(self.im) + 'j'
+        if(self.re == 0 and self.im > 0):
+            output = str(self.im) + 'j' if(self.im != 1) else 'j'
+        if(self.re == 0 and self.im < 0):
+            output = str(self.im) + 'j' if(self.im != -1) else '-j'
         return output
