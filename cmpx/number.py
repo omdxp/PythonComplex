@@ -30,47 +30,15 @@ class Complex():
     """
     This method instanciate a Complex object from a complex number
     """
-    @classmethod
-    def fromComplex(self, comp, restore=True):
+    @staticmethod
+    def fromComplex(comp, restore=True):
         try:
             if isinstance(comp, complex):
-                self.re = comp.real
-                self.im = comp.imag
-                self.restore = restore
+                return Complex(comp.real, comp.imag, restore)
             else:
                 raise ValueError('The number you passed is not a complex')
         except ValueError as err:
             print_err(err)
-    # Getters
-    @property
-    def re(self):
-        return self.re
-    @property
-    def im(self):
-        return self.im
-    @property
-    def restore(self):
-        return self.restore
-    # Setters
-    @re.setter
-    def re(self, re):
-        self.re = re
-    @im.setter
-    def im(self, im):
-        self.im = im
-    @restore.setter
-    def restore(self, restore):
-        self.restore = restore
-    # Deleters
-    @re.deleter
-    def re(self):
-        del self.re
-    @im.deleter
-    def im(self):
-        del self.im
-    @restore.deleter
-    def restore(self):
-        del self.restore
     # Operator overloading 1 : +
     def __add__(self, other):
         try:
