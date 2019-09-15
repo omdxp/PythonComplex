@@ -6,7 +6,7 @@ from math import sqrt
 # Function to solve a second degree (or linear) equation with passing arguments seperatly
 def solve(a, b, c=0):
     try:
-        if a and b == 0:
+        if a or a and b == 0 :
             raise ValueError('At least give a number to the first two coefficents')
         if c != 0:
             delta = b**2 - 4 * a * c
