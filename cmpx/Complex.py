@@ -4,15 +4,8 @@ Created on Tue Sep 10 17:36:25 2019
 
 @author: Omar Belghaouti
 """
-import os
-from colorama import init, Fore, Style
+from cmpx import print_err
 from math import sqrt
-
-# Check the os to make output colorful in any platform
-if os.name == 'nt':
-    init(convert=True)
-elif os.name == 'linux' or 'linux2' or 'darwin':
-    init(convert=False)
     
 # Complex class for complex number manipulations
 class Complex():
@@ -233,10 +226,6 @@ class Complex():
     # Conjugated of a complex number
     def con(self):
         return Complex(self.re, - self.im, self.restore)
-    # function to print the error message
-    def print_err(self, err):
-        print(Fore.RED + '{}: {}'.format(err.__class__.__name__, err))
-        print(Style.RESET_ALL, end='')
     # Representation function for representing a complex number
     def __repr__(self):
         if(self.re != 0 and self.im > 0):
