@@ -2,7 +2,7 @@
 """
 Created on Sun Sep 15 12:04:55 2019
 
-@author: Cds
+@author: Omar Belghaouti
 """
 import os
 from colorama import init, Fore, Style
