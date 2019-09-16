@@ -37,6 +37,8 @@ print(number)
 number = Complex(re=3, im=-2.4, restore=False) # restore argument is by default True, whenever an error occurs on operation, the last result will be restored to the object, else if it is False then the object will be simply None.
 # Instanciation 6
 number = Complex.fromComplex(4 - 3j - 2) # Real = 2, Imaginary = -3
+# Keep in mind that the imaginary part 'j' must be always multiplied with a coefficient as follows
+number = Complex.fromComplex(1 - 1j)
 ```
 ### Basic operations
 ```python
@@ -77,6 +79,9 @@ print(num1)
 print('con({}) = {}'.format(num2, num2.con()))
 # Module of a complex number
 print('mod({}) = {}'.format(num2, num2.mod()))
+# You can also make basic operations with non instanciated complex numbers like this
+num1 *= (1 - 1j)
+print(num1)
 ```
 ### Comparisons of Complex numbers
 ```python
@@ -94,6 +99,8 @@ if(num1 <= num2): print('({}) <= ({})'.format(num1, num2))
 if(num1 == num2): print('({}) == ({})'.format(num1, num2))
 # Not equal
 if(num1 != num2): print('({}) != ({})'.format(num1, num2))
+# You can also make comparisons with non instanciated complex numbers like this
+if(num1 > (1 - 3j)): print('({}) != ({})'.format(num1, (1 - 3j)))
 ```
 ### Solving linear equation and second degree equation
 #### Importing solve function
