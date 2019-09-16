@@ -1,9 +1,9 @@
-from cmpx import print_err
+from cmpx import Complex
+from cmpx.equations import solve
 
 def main():
-    try:
-        raise ValueError('Just for testing purposes')
-    except ValueError as err:
-        print_err(err)
+    a = Complex(1, 4, False)
+    a /= 0
+    print(a)
 
 if __name__ == '__main__': main()

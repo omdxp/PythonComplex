@@ -44,7 +44,10 @@ class Complex():
             if other is None:
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
-                other = Complex(other)
+                if isinstance(other, complex):
+                    other = Complex(other.real, other.imag)
+                else:
+                    other = Complex(other)
             return Complex(self.re + other.re, self.im + other.im, self.restore)
         except ValueError as err:
             print_err(err)
@@ -54,7 +57,10 @@ class Complex():
             if other is None:
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
-                other = Complex(other)
+                if isinstance(other, complex):
+                    other = Complex(other.real, other.imag)
+                else:
+                    other = Complex(other)
             return Complex(self.re - other.re, self.im - other.im, self.restore)
         except ValueError as err:
             print_err(err)
@@ -64,7 +70,10 @@ class Complex():
             if other is None:
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
-                other = Complex(other)
+                if isinstance(other, complex):
+                    other = Complex(other.real, other.imag)
+                else:
+                    other = Complex(other)
             return Complex(self.re * other.re - self.im * other.im, self.re * other.im + self.im * other.re, self.restore)
         except ValueError as err:
             print_err(err)
@@ -74,7 +83,10 @@ class Complex():
             if other is None:
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
-                other = Complex(other)
+                if isinstance(other, complex):
+                    other = Complex(other.real, other.imag)
+                else:
+                    other = Complex(other)
             den = other * other.con()
             num = self * other.con()
             if den.re == 0 and self.restore:
@@ -89,7 +101,10 @@ class Complex():
             if other is None:
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
-                other = Complex(other)
+                if isinstance(other, complex):
+                    other = Complex(other.real, other.imag)
+                else:
+                    other = Complex(other)
             den = other * other.con()
             num = self * other.con()
             if den.re == 0 and self.restore:
@@ -103,7 +118,10 @@ class Complex():
             if other is None:
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
-                other = Complex(other)
+                if isinstance(other, complex):
+                    other = Complex(other.real, other.imag)
+                else:
+                    other = Complex(other)
             return self.mod() > other.mod()
         except ValueError as err:
             print_err(err)
@@ -113,7 +131,10 @@ class Complex():
             if other is None:
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
-                other = Complex(other)
+                if isinstance(other, complex):
+                    other = Complex(other.real, other.imag)
+                else:
+                    other = Complex(other)
             return self.mod() >= other.mod()
         except ValueError as err:
             print_err(err)
@@ -123,7 +144,10 @@ class Complex():
             if other is None:
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
-                other = Complex(other)
+                if isinstance(other, complex):
+                    other = Complex(other.real, other.imag)
+                else:
+                    other = Complex(other)
             return not self >= other
         except ValueError as err:
             print_err(err)
@@ -133,7 +157,10 @@ class Complex():
             if other is None:
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
-                other = Complex(other)
+                if isinstance(other, complex):
+                    other = Complex(other.real, other.imag)
+                else:
+                    other = Complex(other)
             return not self > other
         except ValueError as err:
             print_err(err)
@@ -143,7 +170,10 @@ class Complex():
             if other is None:
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
-                other = Complex(other)
+                if isinstance(other, complex):
+                    other = Complex(other.real, other.imag)
+                else:
+                    other = Complex(other)
             return (self.re == other.re) and (self.im == other.im)
         except ValueError as err:
             print_err(err)
@@ -153,7 +183,10 @@ class Complex():
             if other is None:
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
-                other = Complex(other)
+                if isinstance(other, complex):
+                    other = Complex(other.real, other.imag)
+                else:
+                    other = Complex(other)
             return not self == other
         except ValueError as err:
             print_err(err)
@@ -163,7 +196,10 @@ class Complex():
             if other is None:
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
-                other = Complex(other)
+                if isinstance(other, complex):
+                    other = Complex(other.real, other.imag)
+                else:
+                    other = Complex(other)
             self.re += other.re
             self.im += other.im
             return Complex(self.re, self.im, self.restore)
@@ -175,7 +211,10 @@ class Complex():
             if other is None:
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
-                other = Complex(other)
+                if isinstance(other, complex):
+                    other = Complex(other.real, other.imag)
+                else:
+                    other = Complex(other)
             self.re -= other.re
             self.im -= other.im
             return Complex(self.re, self.im, self.restore)
@@ -187,7 +226,10 @@ class Complex():
             if other is None:
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
-                other = Complex(other)
+                if isinstance(other, complex):
+                    other = Complex(other.real, other.imag)
+                else:
+                    other = Complex(other)
             self.re = self.re * other.re - self.im * other.im
             self.im = self.re * other.im + self.im * other.re
             return Complex(self.re, self.im, self.restore)
@@ -199,7 +241,10 @@ class Complex():
             if other is None:
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
-                other = Complex(other)
+                if isinstance(other, complex):
+                    other = Complex(other.real, other.imag)
+                else:
+                    other = Complex(other)
             den = other * other.con()
             num = self * other.con()
             if den.re == 0 and self.restore:
@@ -216,7 +261,10 @@ class Complex():
             if other is None:
                 raise ValueError('The second number is None')
             if not isinstance(other, Complex):
-                other = Complex(other)
+                if isinstance(other, complex):
+                    other = Complex(other.real, other.imag)
+                else:
+                    other = Complex(other)
             den = other * other.con()
             num = self * other.con()
             if den.re == 0 and self.restore:
