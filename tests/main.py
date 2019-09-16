@@ -1,10 +1,9 @@
-from cmpx import Complex
+from cmpx import print_err
 
 def main():
-    a = 4 + 3 - 5j
-    print(a.real)
-    print(a.imag)
-    cmplx = Complex(a, 1)
-    print(cmplx)
+    try:
+        raise ValueError('Just for testing purposes')
+    except ValueError as err:
+        print_err(err)
 
 if __name__ == '__main__': main()

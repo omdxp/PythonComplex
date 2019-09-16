@@ -4,8 +4,7 @@ Created on Tue Sep 10 17:36:25 2019
 
 @author: Omar Belghaouti
 """
-from colorama import Fore, Style
-from .error import print_err
+from .error import print_err, print_res
 from math import sqrt
     
 # Complex class for complex number manipulations
@@ -79,9 +78,7 @@ class Complex():
             den = other * other.con()
             num = self * other.con()
             if den.re == 0 and self.restore:
-                print(Fore.RED + 'Float division by zero')
-                print(Fore.GREEN + 'Restoring last number')
-                print(Style.RESET_ALL, end='')
+                print_res()
                 return Complex(self.re, self.im, self.restore)
             return Complex(num.re / den.re, num.im / den.re, self.restore)
         except (ZeroDivisionError, ValueError) as err:
@@ -96,9 +93,7 @@ class Complex():
             den = other * other.con()
             num = self * other.con()
             if den.re == 0 and self.restore:
-                print(Fore.RED + 'Float division by zero')
-                print(Fore.GREEN + 'Restoring last number')
-                print(Style.RESET_ALL, end='')
+                print_res()
                 return Complex(self.re, self.im, self.restore)
             return Complex(num.re // den.re, num.im // den.re, self.restore)
         except (ZeroDivisionError, ValueError) as err:
@@ -208,9 +203,7 @@ class Complex():
             den = other * other.con()
             num = self * other.con()
             if den.re == 0 and self.restore:
-                print(Fore.RED + 'Float division by zero')
-                print(Fore.GREEN + 'Restoring last number')
-                print(Style.RESET_ALL, end='')
+                print_res()
                 return Complex(self.re, self.im, self.restore)
             self.re = num.re / den.re
             self.im = num.im / den.re
@@ -227,9 +220,7 @@ class Complex():
             den = other * other.con()
             num = self * other.con()
             if den.re == 0 and self.restore:
-                print(Fore.RED + 'Float division by zero')
-                print(Fore.GREEN + 'Restoring last number')
-                print(Style.RESET_ALL, end='')
+                print_res()
                 return Complex(self.re, self.im, self.restore)
             self.re = num.re // den.re
             self.im = num.im // den.re
