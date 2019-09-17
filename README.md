@@ -3,8 +3,8 @@ A package for different operations on complex numbers.
 
 ## More details
 - This package is essentially for mathematical operations on complex numbers.
-- It is very easy and intuitif to use, as any mathematicain would expect.
-- There is more to come on this class, like power of complex numbers.
+- It is very easy and intuitif to use, as any mathematician would expect.
+- There is more to come on this class.
 
 ## Installation
 
