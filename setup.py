@@ -5,7 +5,7 @@ with open('README.md') as readme_file:
 
 setup_args = dict(
     name='cmpx',
-    version='0.8.3',
+    version='0.8.4',
     description='A package for different operations on complex numbers',
     long_description_content_type='text/markdown',
     long_description=README,
